@@ -1,4 +1,4 @@
-const PAGE_ID = '118572181188909';
+const PAGE_ID = globalThis.process?.env.PAGE_ID || '118572181188909';
 const CACHE_DURATION = 5 * 60 * 1000;
 
 let cache = { data: null, time: 0 };

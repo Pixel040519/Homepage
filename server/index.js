@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 
-const PAGE_ID = '118572181188909';
+const PAGE_ID = globalThis.process?.env.PAGE_ID || '118572181188909';
 const PAGE_TOKEN = globalThis.process?.env.PAGE_TOKEN;
 
 let cache = { data: null, time: 0 };
