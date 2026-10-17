@@ -6,7 +6,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="site-footer__col">
-          <h3>School Portal</h3>
+          <h3>Northern Rizal Yorklin School</h3>
           <p>
             Building future-ready learners through strong academics,
             values-centered formation, and community partnership.
@@ -23,14 +23,14 @@ function Footer() {
 
         <div className="site-footer__col">
           <h4>Contact</h4>
-          <p>Email: info@school.edu</p>
-          <p>Phone: +63 900 000 0000</p>
-          <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
+          <p>Email: nrys_1939@yahoo.com.ph</p>
+          <p>Phone: 8296-1782 / 8365-9318</p>
+          <p>Grace Park West, Caloocan City</p>
         </div>
       </div>
 
       <div className="site-footer__bottom">
-        <p>&copy; {new Date().getFullYear()} School Portal. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Northern Rizal Yorklin School. All rights reserved.</p>
       </div>
     </footer>
   );

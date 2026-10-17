@@ -1,5 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import auditoriumImage from '../../../facilities/AUDITORIUM.JPG';
+import classroomImage from '../../../facilities/Classroom.JPG';
+import computerLaboratoryImage from '../../../facilities/Computer Laboratory2.JPG';
+import libraryImage from '../../../facilities/LIBRARY6.JPG';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -77,6 +81,44 @@ const Home = () => {
           </button>
         </div>
       </div>
+
+      {/* FACILITIES PREVIEW */}
+      <section className="home-facilities" aria-labelledby="facilities-title">
+        <div className="home-facilities__header">
+          <h2 id="facilities-title">Explore Our Facilities</h2>
+          <p>Spaces that inspire learning, discovery, and growth.</p>
+        </div>
+
+        <div className="home-facilities__grid">
+          <article className="home-facility-card">
+            <img src={computerLaboratoryImage} alt="Computer laboratory" loading="lazy" />
+            <h3>Computer Laboratory</h3>
+            <p>Technology and digital learning</p>
+          </article>
+
+          <article className="home-facility-card">
+            <img src={auditoriumImage} alt="School auditorium" loading="lazy" />
+            <h3>Auditorium</h3>
+            <p>Gathering, performance, and discovery</p>
+          </article>
+
+          <article className="home-facility-card">
+            <img src={classroomImage} alt="Yorklin classroom" loading="lazy" />
+            <h3>Classrooms</h3>
+            <p>A supportive learning environment</p>
+          </article>
+
+          <article className="home-facility-card">
+            <img src={libraryImage} alt="Yorklin library" loading="lazy" />
+            <h3>Library</h3>
+            <p>A place to read and grow</p>
+          </article>
+        </div>
+
+        <button className="home-facilities__button" onClick={() => navigate('/facilities')}>
+          View All Facilities <span aria-hidden="true">→</span>
+        </button>
+      </section>
     </section>
   );
 };

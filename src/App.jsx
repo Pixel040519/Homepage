@@ -1,33 +1,43 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import Home from './assets/pages/Home';
 import About from './assets/pages/About';
 import Programs from './assets/pages/Programs';
 import Contact from './assets/pages/Contact';
 import Mission from './assets/pages/Mission';
 import Admissions from './assets/pages/Admissions';
+import Facilities from './assets/pages/Facilities';
+import Announcements from './pages/Announcements';
 import Footer from './footer';
 import './style.css';
 
+const navLinkClass = ({ isActive }) => (isActive ? 'active' : undefined);
+
 function App() {
+  const location = useLocation();
+
   return (
     
     <div className="App">
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Primary navigation">
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/programs">Programs</Link>
-          <Link to="/admissions">Admissions</Link>
-          <Link to="/announcements">Announcements</Link>
-          <Link to="/contact">Contact</Link>
+          <NavLink end to="/" className={navLinkClass}>Home</NavLink>
+          <NavLink to="/about" className={navLinkClass}>About</NavLink>
+          <NavLink to="/programs" className={navLinkClass}>Programs</NavLink>
+          <NavLink to="/admissions" className={navLinkClass}>Admissions</NavLink>
+          <NavLink to="/announcements" className={navLinkClass}>Announcements</NavLink>
+          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </div>
-        <button className="login-btn">LOGIN</button>
+        <NavLink className="login-btn" to="/contact">Log In</NavLink>
       </nav>
 
-      <header className="hero">
-        <img src="/school.png" className="hero-img" alt="School Banner" />
-      </header>
+      {location.pathname === '/' && (
+        <header className="hero">
+          <NavLink to="/" aria-label="Northern Rizal Yorklin School home">
+            <img src="/school.png" className="hero-img" alt="Northern Rizal Yorklin School" />
+          </NavLink>
+        </header>
+      )}
 
       <main id="content-area">
         <Routes>
@@ -37,6 +47,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/admissions" element={<Admissions />} />
+          <Route path="/facilities" element={<Facilities />} />
+          <Route path="/announcements" element={<Announcements />} />
         </Routes>
       </main>
 

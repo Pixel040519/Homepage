@@ -4,15 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const About = () => {
   const navigate = useNavigate();
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    // offset so the navbar doesn't cover the section title
-    const y = el.getBoundingClientRect().top + window.scrollY - 80;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  };
-
   return (
     <section className="content about-page">
       <div className="mission-page">
